@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './style.module.css';
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className={styles.header}>
       Здесь должен быть логотип
     </header>
   );
