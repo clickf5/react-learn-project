@@ -1,0 +1,33 @@
+.info {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    "avatar name"
+    "avatar description";
+  grid-template-rows: 160px;
+  grid-template-columns: 160px 1fr;
+  width: 100%;
+  grid-gap: 10px;
+  padding: 10px;
+  margin-top: -130px;
+}
+
+.avatar {
+  grid-area: avatar;
+}
+
+.avatar img {
+  display: block;
+  width: 160px;
+  height: 160px;
+  background-clip: padding-box;
+  border-radius: 80px;
+}
+
+.name {
+  grid-area: name;
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  align-self: center;
+  padding-left: 10px;
+}

@@ -1,0 +1,18 @@
+.my_posts {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+.controls textarea {
+    border: 1px solid rgb(225, 225, 225);
+    padding: 5px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.posts {
+    display: grid;
+    grid-gap: 10px;
+}

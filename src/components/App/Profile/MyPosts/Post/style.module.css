@@ -1,0 +1,18 @@
+.post {
+    background-color: rgb(225, 225, 225);
+    display: grid;
+    grid-template-areas: "avatar message";
+    grid-template-columns: 70px 1fr;
+    padding: 10px;
+    border-radius: 5px;
+    grid-gap: 10px;
+}
+
+.avatar img {
+    height: 70px;
+    border-radius: 5px;
+}
+
+.message {
+
+}
