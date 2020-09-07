@@ -6,13 +6,13 @@ import styles from './style.module.css'
 
 const Profile = () => {
     return (
-      <main className={styles.profile}>
+      <>
         <div className={styles.profile_background}>
           <img src={wallpaper} />
         </div>
         <Info />
         <MyPosts />
-      </main>
+      </>
     );
 };
 

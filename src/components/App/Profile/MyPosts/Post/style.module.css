@@ -1,11 +1,17 @@
 .post {
     background-color: rgb(225, 225, 225);
     display: grid;
-    grid-template-areas: "avatar message";
+    grid-template-areas:
+        "avatar message"
+        "avatar like";
     grid-template-columns: 70px 1fr;
     padding: 10px;
     border-radius: 5px;
     grid-gap: 10px;
+}
+
+.avatar {
+    grid-area: avatar; 
 }
 
 .avatar img {
@@ -14,5 +20,9 @@
 }
 
 .message {
+    grid-area: message;
+}
 
+.like {
+    grid-area: like;
 }
