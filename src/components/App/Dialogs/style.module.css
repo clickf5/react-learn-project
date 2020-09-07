@@ -1,0 +1,40 @@
+.dialogs {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-gap: 10px;
+}
+
+.dialogs_items {
+    display: grid;
+    grid-gap: 10px;
+    align-content: start;
+}
+
+.item {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(225, 225, 225);
+    text-decoration: none;
+}
+
+.item:hover {
+    background-color: rgb(133, 52, 52);
+    color: rgb(225, 225, 225);
+}
+
+.item.active {
+    background-color: rgb(133, 52, 52);
+    color: rgb(225, 225, 225);
+}
+
+.messages {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(225, 225, 225);
+}
