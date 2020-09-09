@@ -10,15 +10,16 @@ import Music from './Music';
 import Settings from './Settings';
 import styles from './style.module.css'
 
-const App = () => {
+const App = (props) => {
+  const { dialogs, messages, posts } = props;
   return (
     <BrowserRouter>
       <Header />
       <Navbar />
       <main className={styles.content}>
         <Switch>
-          <Route path="/dialogs" component={Dialogs} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/dialogs" render={() => <Dialogs dialogs={dialogs} messages={messages} />} />
+          <Route path="/profile" render={() => <Profile posts={posts} />} />
           <Route path="/news" component={News} />
           <Route path="/music" component={Music} />
           <Route path="/settings" component={Settings} />

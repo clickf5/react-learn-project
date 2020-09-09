@@ -4,14 +4,15 @@ import MyPosts from './MyPosts';
 import wallpaper from '../../../images/wallpaper.jpg';
 import styles from './style.module.css'
 
-const Profile = () => {
+const Profile = (props) => {
+    const { posts } = props;
     return (
       <>
         <div className={styles.profile_background}>
           <img src={wallpaper} />
         </div>
         <Info />
-        <MyPosts />
+        <MyPosts posts={posts} />
       </>
     );
 };

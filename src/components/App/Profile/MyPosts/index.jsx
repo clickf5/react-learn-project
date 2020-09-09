@@ -2,15 +2,10 @@ import React from 'react';
 import Post from './Post';
 import styles from './style.module.css';
 
-const posts = [
-  { id: 1, message: 'Hello!', like: 5 },
-  { id: 1, message: 'Goodby!', like: 0 },
-  { id: 1, message: "What's up!", like: 15 }
-];
+const postsElements = (posts) => posts.map(({ message, like }) => <Post message={message} likeCount={like} />);
 
-const postsElements = posts.map(({ message, like }) => <Post message={message} likeCount={like} />);
-
-const MyPosts = () => {
+const MyPosts = (props) => {
+  const {posts} = props;
   return (
     <div className={styles.my_posts}>
         <div className={styles.controls}>
@@ -21,7 +16,7 @@ const MyPosts = () => {
         </div>
         My posts:
         <div className={styles.posts}>
-            {postsElements}
+            {postsElements(posts)}
         </div>
     </div>
   );
