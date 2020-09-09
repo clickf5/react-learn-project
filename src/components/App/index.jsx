@@ -11,15 +11,15 @@ import Settings from './Settings';
 import styles from './style.module.css'
 
 const App = (props) => {
-  const { dialogs, messages, posts } = props;
+  const { state } = props;
   return (
     <BrowserRouter>
       <Header />
       <Navbar />
       <main className={styles.content}>
         <Switch>
-          <Route path="/dialogs" render={() => <Dialogs dialogs={dialogs} messages={messages} />} />
-          <Route path="/profile" render={() => <Profile posts={posts} />} />
+          <Route path="/dialogs" render={() => <Dialogs state={state} />} />
+          <Route path="/profile" render={() => <Profile state={state} />} />
           <Route path="/news" component={News} />
           <Route path="/music" component={Music} />
           <Route path="/settings" component={Settings} />

@@ -4,27 +4,28 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
-const dialogs = [
-  { id: 1, name: 'Andrey' },
-  { id: 2, name: 'Eugene' },
-  { id: 3, name: 'Sandra' }
-];
 
-const messages = [
-  { id: 1, message: 'msg1' },
-  { id: 2, message: 'msg1' },
-  { id: 3, message: 'msg1' }
-];
-
-const posts = [
-  { id: 1, message: 'Hello!', like: 5 },
-  { id: 1, message: 'Goodby!', like: 0 },
-  { id: 1, message: "What's up!", like: 15 }
-];
+const state = {
+  dialogs: [
+    { id: 1, name: 'Andrey' },
+    { id: 2, name: 'Eugene' },
+    { id: 3, name: 'Sandra' }
+  ],
+  posts: [
+    { id: 1, message: 'Hello!', like: 9 },
+    { id: 2, message: 'Vasya!', like: 9 },
+    { id: 3, message: 'Everething ok!', like: 8 }
+  ],
+  messages: [
+    { id: 1, message: 'msg1' },
+    { id: 2, message: 'msg2' },
+    { id: 3, message: 'msg3' }
+  ],
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App dialogs={dialogs} messages={messages} posts={posts} />
+    <App state={state} />
   </React.StrictMode>,
   document.getElementById('root')
 );
