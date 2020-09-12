@@ -1,0 +1,24 @@
+.sidebar {
+    padding: 10px;
+}
+
+.friends {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.friend {
+    justify-self: center;
+}
+
+.ava {
+    width: 30px;
+    height: 30px;
+    background-color: brown;
+    border-radius: 15px;
+}
+
+.name {
+
+}
