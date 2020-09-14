@@ -5,15 +5,16 @@ import wallpaper from '../../../images/wallpaper.jpg';
 import styles from './style.module.css'
 
 const Profile = (props) => {
-    return (
-      <>
-        <div className={styles.profile_background}>
-          <img src={wallpaper} />
-        </div>
-        <Info />
-        <MyPosts state={props.state} />
-      </>
-    );
+  const { state, addPost, changeNewPostText } = props;
+  return (
+    <>
+      <div className={styles.profile_background}>
+        <img src={wallpaper} />
+      </div>
+      <Info />
+      <MyPosts state={state} addPost={addPost} changeNewPostText={changeNewPostText} />
+    </>
+  );
 };
 
 export default Profile;

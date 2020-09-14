@@ -1,0 +1,24 @@
+{
+    "extends": [
+        "react-app",
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "no-console": 0,
+        "jsx-a11y/label-has-associated-control": "off",
+        "react/prop-types": [0],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ]
+    }
+}
