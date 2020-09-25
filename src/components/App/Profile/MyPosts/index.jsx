@@ -1,22 +1,34 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Post from './Post';
+import * as actions from '../../../../redux/actions';
 import styles from './style.module.css';
 
+const mapStateToProps = (state) => ({ profile: state.profile });
+const mapDispatchToProps = {
+  addPost: actions.addPost,
+  updateNewPostText: actions.updateNewPostText,
+};
+
 const MyPosts = (props) => {
-  const { state } = props;
+  const {
+    profile: { posts, newPostText }, addPost, updateNewPostText, dispatch,
+  } = props;
   const newPostElement = React.createRef();
 
-  const addPost = () => {
-    props.addPost();
-    props.changeNewPostText('');
+  const addPostHandle = () => {
+    // dispatch({ type: 'ADD-POST' });
+    // dispatch({ type: 'UPDATE-NEW-POST-TEXT', payload: { text: '' } });
+    addPost();
+    updateNewPostText('');
   };
 
   const onChange = () => {
     const text = newPostElement.current.value;
-    props.changeNewPostText(text);
+    updateNewPostText(text);
+    // dispatch({ type: 'UPDATE-NEW-POST-TEXT', payload: { text } });
   };
 
-  const { posts, newPostText } = state;
   const postsElements = posts.map(({ message, like, id }) => <Post key={id} message={message} likeCount={like} />);
   return (
     <div className={styles.my_posts}>
@@ -24,9 +36,9 @@ const MyPosts = (props) => {
         <div>
           <textarea ref={newPostElement} onChange={onChange} value={newPostText} />
         </div>
-        <button onClick={addPost}>Add post</button>
+        <button onClick={addPostHandle}>Add post</button>
       </div>
-        My posts:
+      My posts:
       <div className={styles.posts}>
         {postsElements}
       </div>
@@ -34,4 +46,4 @@ const MyPosts = (props) => {
   );
 };
 
-export default MyPosts;
+export default connect(mapStateToProps, mapDispatchToProps)(MyPosts);
